@@ -9,25 +9,15 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/contacts-db');
 const db = mongoose.connection
 
-db.on('error',(err)=>{
-
-
+db.on('error', (err) => {
     console.log(err)
 }
 
-
-
 )
 
-
 db.once('open', () => {
-
-
     console.log('Database connected Successfully')
 }
-
-
-
 )
 
 
@@ -108,7 +98,7 @@ app.use(bodyParser.json())
 
 
 
-const PORT=process.env.PORT || 3000
+const PORT = process.env.PORT || 3000
 
 
 /*
@@ -121,9 +111,9 @@ app.use((req,res,next)=>{
 */
 
 
-app.use('/api/contacts',contactRoute)
+app.use('/api/contacts', contactRoute)
 
-app.get('/',(req,res)=>{
+app.get('/', (req, res) => {
 
     res.send('<h1>Hello World</h1>')
 }
@@ -163,8 +153,8 @@ app.post('/api/contacts', (req, res) => {
 
 
 
-app.listen(PORT,()=>{
+app.listen(PORT, () => {
 
-console.log(`server is running of PORT ${PORT}`)
+    console.log(`server is running of PORT ${PORT}`)
 
 })
