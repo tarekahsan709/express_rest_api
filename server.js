@@ -10,7 +10,7 @@ mongoose.connect('mongodb://localhost/contacts-db');
 const db = mongoose.connection
 
 db.on('error', (err) => {
-    console.log(err)
+    console.error('Database error:',err);
 }
 
 )
