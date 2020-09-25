@@ -14,9 +14,9 @@ For development, you will only need Node.js and a node global package, installed
 - Learn about [MongoDb](https://nodejs.org/) and [Mongoose](https://nodejs.org/)
 
 ## Install
-  $ git clone https://github.com/tarekahsan709/express_rest_api
-  $ cd express_rest_api
-  $ node install to grab all project dependencies. (be on the project directory)
+- $ git clone https://github.com/tarekahsan709/express_rest_api
+- $ cd express_rest_api
+- $ node install to grab all project dependencies. (be on the project directory)
 
 ## Running the project
 - First run the mongoDb 
