@@ -4,7 +4,6 @@ const validator = require('validator');
 const Schema = mongoose.Schema
 
 const contactSchema = new Schema({
-
     name: {
         type: String,
         trim: true,
@@ -14,49 +13,30 @@ const contactSchema = new Schema({
     },
     phone: {
         type: String,
-         trim: true,
-
+        trim: true,
         require: true,
         unique: true
-
-
-
-
     },
     email: {
         type: String,
         trim: true,
-
         require: true,
         validate: {
-           validator: (v) => {
-                  
+           validator: (v) => {             
             return validator.isEmail(v)
-
            },
            message: `{VALUE} is not an email`
-
-
-
         }
-
-
-
-
     }
 
+})
 
-
-
-
-}
-
-
-
-)
-
-
-
+contactSchema
+  .set('autoIndex', true)
+  .set('timestamps', {
+    createdAt: 'created_at',
+    updatedAt: 'updated_at'
+  });
 
 const Contact = mongoose.model('Contact', contactSchema)
 
